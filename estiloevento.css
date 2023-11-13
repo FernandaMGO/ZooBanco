@@ -1,0 +1,34 @@
+
+.calendar {
+    width: 800px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .calendar-header {
+    background-color: #f0241d;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+  
+  .calendar-weekdays {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 5px 0;
+  }
+  
+  .day {
+    width: 14.285%;
+    padding: 10px 0;
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+  }

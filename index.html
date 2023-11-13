@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="zoom-container">
+    <!-- Conteúdo da página aqui -->
+
+
+        <!-- API de Libras-->
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>
+            new window.VLibras.Widget();
+        </script>
+
+        <!-- Aviso de Cookies -->
+        <div id="cookie-banner" class="cookie-banner">
+            <p><strong>Esse site utiliza cookies para melhorar a sua experiência. Ao continuar navegando, você concorda com o uso de cookies.</strong></p>
+            <button onclick="acceptCookies()">Aceitar</button>
+            <button onclick="declineCookies()">Recusar</button>
+        </div>
+        <script src="script.js"></script>
+  
+        <script>
+            document.addEventListener("DOMContentLoaded", function () 
+            {
+            if (!localStorage.getItem("cookieConsent")) 
+            {
+            document.getElementById("cookie-banner").style.display = "block";
+            }});
+  
+            function acceptCookies() {
+            localStorage.setItem("cookieConsent", "accepted");
+            document.getElementById("cookie-banner").style.display = "none";
+            }
+            function declineCookies() 
+            {
+        // Implementar a lógica de recusa de cookies, se necessário
+    document.getElementById("cookie-banner").style.display = "none";
+            }
+            </script>  
+    
+<!-- Aqui é a logo da Univesp-->
+<img src="https://upload.wikimedia.org/wikipedia/pt/6/6f/Logo_univesp.png" alt="img">
+
+<!--Aqui é para a acessibilidade de Localização-->
+<script>
+    function mostrarLocalizacao(position) 
+    {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const accuracy = position.coords.accuracy;
+                
+        const locationElement = document.getElementById('location');
+        locationElement.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}<br>Acurácia: ${accuracy} metros`;
+    }
+                
+    function erroLocalizacao(error) 
+    {
+        const locationElement = document.getElementById('location');
+        switch (error.code) 
+    {
+        case error.PERMISSION_DENIED:
+        locationElement.innerHTML = "Acesso à localização negado pelo usuário.";
+        break;
+        case error.POSITION_UNAVAILABLE:
+        locationElement.innerHTML = "Localização indisponível.";
+        break;
+        case error.TIMEOUT:
+        locationElement.innerHTML = "Tempo limite esgotado para obter a localização.";
+        break;
+        case error.UNKNOWN_ERROR:
+        locationElement.innerHTML = "Erro desconhecido ao obter a localização.";
+        break;
+    }
+        }
+                
+        if ("geolocation" in navigator) 
+        {
+            navigator.geolocation.getCurrentPosition(mostrarLocalizacao, erroLocalizacao);
+        }
+        else 
+        {
+            const locationElement = document.getElementById('location');
+            locationElement.innerHTML = "A geolocalização não é suportada neste navegador.";
+        }
+</script>  
+
+
+
+  <!-- Inicio do Formulário --> 
+    <div class="container">
+        <h1>CADASTRO DE ANIMAIS</h1>
+        <div class="animal-form">
+          <form>
+            <input type="text" placeholder="Nome do Animal">
+            <select>
+              <option value="">Selecione a Espécie</option>
+              <option value="leao">Mamíferos </option>
+              <option value="girafa">Répteis</option>
+              <option value="elefante">Aves</option>
+              <option value="elefante">Anfibíos</option>
+              <option value="elefante">Peixes</option>
+              <option value="elefante">Insetos</option>
+              <option value="elefante">Felinos</option>
+            </select>
+            
+            <select>
+              <option value="">Selecione o Viveiro</option>
+              <option value="viveiro1">Aves</option>
+              <option value="viveiro2">Répteis</option>
+              <option value="viveiro3">Aquáticos</option>
+              <option value="viveiro3">Felinos</option>
+              <option value="viveiro3">Primatas</option>
+              <option value="viveiro3">Herbívoros</option>
+              <option value="viveiro3">Noturnos</option>
+            </select>
+
+            <button type="submit">Cadastrar Animal</button>
+            </form>
+            <div class="species-form">
+   
+     
+            
+    <h2>Cadastro de Espécies</h2>
+            <form>
+              <input type="text" placeholder="Nome da Espécie">
+              <button type="submit">Cadastrar Espécie</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+            <!--Menu Inferior-->
+            <div class="footer">
+                <div class="footer-content">
+                  <div class="footer-section">
+                    <h2>Sobre Nós</h2>
+                    <p>Projeto Desenvolvido pelos alunos da Univesp</p>
+                  </div>
+            
+                  <div class="footer-section">
+                    <h2>Saiba Mais</h2>
+                    <ul>
+                      <li><a href="contato.html">Contato</a></li>
+                      <li><a href="ingresso.html">Ingressos</a></li>
+                      <li><a href="evento.html">Eventos</a></li>
+                    </ul>
+                  </div>
+            
+                  <div class="footer-section">
+                    <h2>Ao Vivo</h2>
+                    <ul>
+                      <li><a href="aovivo.html">Ao Vivo</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+</div>
+              <div class="zoom-buttons">
+                <button onclick="zoomIn()">A +</button>
+                <button onclick="zoomOut()">A -</button>
+                <button onclick="resetZoom()">Modo Normal</button>
+            </div>
+            
+            <script src="script.js"></script>
+            
+            <script>
+            const zoomContainer = document.querySelector('.zoom-container');
+            let scaleValue = 1;
+            
+            function zoomIn() {
+                scaleValue += 0.1;
+                applyZoom();
+            }
+            
+            function zoomOut() {
+                scaleValue -= 0.1;
+                applyZoom();
+            }
+            
+            function resetZoom() {
+                scaleValue = 1;
+                applyZoom();
+            }
+            
+            function applyZoom() {
+                // Limit the scale value to a reasonable range
+                scaleValue = Math.max(0.5, Math.min(scaleValue, 3));
+            
+                // Apply the scale transformation
+                zoomContainer.style.transform = `scale(${scaleValue})`;
+            }
+            </script>
+            
+
+</body>
+</html>

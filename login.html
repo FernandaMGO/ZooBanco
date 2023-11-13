@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilolog.css">
+    <title>Login</title>
+  </head>
+
+  <body>
+ <script>
+    function validateLogin() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+      
+        // Aqui você faria a lógica de autenticação real no servidor.
+        // Neste exemplo, vamos verificar se o usuário é "admin" e a senha é "password".
+      
+        if (username === "teste@gmail.com" && password === "123") {
+          alert("Login bem-sucedido!");
+        } else {
+          alert("Usuário ou senha incorretos. Tente novamente.");
+        }
+      }
+    </script>      
+
+    
+
+<div class="login-container">
+    <h1>LOGIN</h1>
+    <form>
+        <div class="botao1">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="botao2">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit" id="loginButton" class="login-button">Entrar</button>
+    </form>
+</div>
+
+<script>
+    const loginButton = document.getElementById("loginButton");
+
+    loginButton.addEventListener("click", () => {
+        loginButton.classList.add("login-button-enter");
+        setTimeout(() => {
+            loginButton.classList.remove("login-button-enter");
+        }, 1000);
+    });
+</script>
+</body>
+</html>

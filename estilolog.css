@@ -1,0 +1,78 @@
+body /*Posição da forma na página*/
+{
+    background-image: url("https://img.freepik.com/vetores-gratis/ilustracao-de-uma-garra-de-monstro-ou-arranhao-de-mao-ou-rasgo-em-fundo-branco_1284-42122.jpg?w=740&t=st=1698108955~exp=1698109555~hmac=2cd2a7b22cafae4eb4627975d3c4a4f70a5bef23eb1b6e95e5bce5550a4cb1ce");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container /*Efeito de forma e centralizada*/
+{
+    background-image: url("https://media.istockphoto.com/id/1312164056/pt/foto/tiger-face-profile-animal-abstract.jpg?s=612x612&w=0&k=20&c=D4ycIDfIojIBqcFtnbSP5Ci60vYXfeHmMY4VW5mRDFo=");
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 150px;
+    width: 100px;
+    animation: slide-in 0.8s ease;
+}
+
+@keyframes slide-in  /*Efeito de animação de Entrada*/
+{
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.login-button /* Estilo do botão entrar*/
+{
+    background-color: #bfdd13;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.login-button:hover /* Efeito ao passar o mouse*/
+{
+    background-color: #ad9c00;
+}
+
+.login-button-enter /* Efeito apagadinho ao clicar*/
+{
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.botao1 /* Estilo do Usuário*/
+{
+    color: #e7da20;
+
+}
+
+.botao2 /* Estilo da Senha*/
+{
+    color: #e7da20;
+}
+
+form
+{
+margin: -70px;
+margin-top: 80px;
+font-size: 30px;
+}
+
+h1
+{
+   color: #e7da20;
+   font-size: 50px;
+   text-align: center;
+   margin: -40px;
+}
